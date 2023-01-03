@@ -1,15 +1,14 @@
-import {defineStore} from 'pinia'
-
+import { defineStore } from 'pinia';
 
 export const Store1 = defineStore('Store1', {
-  state: ()=>{
+  state: () => {
     return {
-      age: 3
-    }
+      age: 3,
+    };
   },
   actions: {
-    setUser () {
-      this.age = this.age + 1
-    }
-  }
-})
+    setUser() {
+      this.age = this.age + 1;
+    },
+  },
+});
