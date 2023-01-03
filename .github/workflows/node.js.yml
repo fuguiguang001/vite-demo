@@ -17,10 +17,18 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm i # 运行 npm
+        run: npm i # 运行 yarn
 
       - name: Run build
-        run: npm run build # 运行 npm build
+        run: npm run build # 运行 yarn build
 
-      - name: view directory files
+      - name: View directory files
         run: ls -a # 查看打包后的目录文件
+
+      - uses: appleboy/scp-action@master # 使用scp-action进行文件上传
+        with:
+          host: ${{ secrets.HOST }} # 服务器host
+          username: ${{ secrets.USER }} # 服务器用户名
+          password: ${{ secrets.PASSWORD }} # 服务器密码
+          source: 'dist' # 需要上传的文件
+          target: '/data' # 上传到服务器的什么位置
