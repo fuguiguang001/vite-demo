@@ -3,7 +3,7 @@ name: Build
 # 提交main分支会触发当前CI
 on:
   push:
-    branches: - main
+    branches: [main]
 
 jobs:
   build:
