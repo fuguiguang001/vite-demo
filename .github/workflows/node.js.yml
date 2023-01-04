@@ -15,13 +15,12 @@ jobs:
         uses: actions/setup-node@v3 # 设置node环境
         with:
           node-version: 16.x # 指定版本
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm i # 运行 yarn
+        run: npm i # 运行 npm
 
       - name: Run build
-        run: npm run build # 运行 yarn build
+        run: npm run build # 运行 npm build
 
       - name: View directory files
         run: ls -a # 查看打包后的目录文件
