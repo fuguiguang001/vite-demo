@@ -1,5 +1,11 @@
 name: Build
 
+inputs:
+  file-path: # id of input
+    description: "Path to test script"
+    required: true
+    default: "输出个🔨"
+
 # 提交main分支会触发当前CI
 on:
   push:
@@ -18,12 +24,6 @@ jobs:
 
       - name: Install dependencies
         run: npm i # 运行 npm
-
-        inputs:
-          file-path: # id of input
-            description: "Path to test script"
-            required: true
-            default: "输出个🔨"
 
       - name: Run build
         run: npm run build # 运行 npm build
